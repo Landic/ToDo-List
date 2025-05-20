@@ -32,7 +32,7 @@ namespace Application.Services
                     return ApiResponseDto<UserDto>.FailureResult("Invalid email or password");
                 if(!VerifyPassword(userLoginDto.Password, user.Password_hash))
                     return ApiResponseDto<UserDto>.FailureResult("Invalid email or password");
-                var userDto = mapper.Map<UserDto>(userLoginDto);
+                var userDto = mapper.Map<UserDto>(user);
                 return ApiResponseDto<UserDto>.SuccessResult(userDto, "Login successful");
             }
             catch (Exception ex)
