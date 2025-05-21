@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { registerUser } from "../api/authApi";
 import InputField from "../components/InputField";
+import { Link } from "react-router-dom";
 
 export default function RegisterPage(){
     const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ export default function RegisterPage(){
         <InputField label="Email" value={email} onChange={e => setEmail(e.target.value)} />
         <InputField label="Name" value={name} onChange={e => setName(e.target.value)} />
         <InputField label="Password" value={password} onChange={e => setPassword(e.target.value)} type="password" />
-        <button type="submit">Register</button>
+        <Link to="/" type="submit">Register</Link>
         <p>{message}</p>
         </form>
     );
